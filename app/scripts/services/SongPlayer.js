@@ -25,11 +25,21 @@
             currentSong = song;
         };
 
+        // @function playSong
+        // @desc Plays selected song and sets playing value to true
+        // @param {Object} song
+
+        var playSong = function(song) {
+            currentBuzzObject.play();
+            song.playing = true;
+        }
+
         SongPlayer.play = function(song) {
             if (currentSong !== song) {
               setSong(song);
-              currentBuzzObject.play();
-              song.playing = true;
+              playSong(song);
+              // currentBuzzObject.play();
+              // song.playing = true;
 
             } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
