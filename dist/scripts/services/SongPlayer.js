@@ -67,7 +67,8 @@
 
             } else if (SongPlayer.currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
-                    playSong(SongPlayer.currentSong);
+                    // playSong(SongPlayer.currentSong);
+                    playSong(song);
                 }
             }
          };
@@ -114,6 +115,10 @@
             if (currentBuzzObject) {
                 currentBuzzObject.setTime(time);
             }
+        };
+
+        SongPlayer.setVolume = function(volume){
+          currentBuzzObject.setVolume(volume);
         };
 
         return SongPlayer;
